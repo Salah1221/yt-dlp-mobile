@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The dark variant lives in values-night, so the window follows
+         the system setting without any colour being written here. -->
+    <style name="Theme.YTDLPMobile" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

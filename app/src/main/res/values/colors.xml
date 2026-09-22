@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The only colour written anywhere. The splash needs a fixed
+         backing, because the mark is a single light colour. -->
+    <color name="splash_background">#101317</color>
+</resources>
