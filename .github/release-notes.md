@@ -10,7 +10,7 @@ Take **ytdlp-mobile-VERSION-arm64-v8a.apk**. Every Android phone sold in recent 
 2. Open it. Android asks you to allow installs from your browser. Allow it.
 3. Play Protect says it does not know the developer. Choose "Install anyway". This is expected for an app that is not on the Play Store.
 
-If an older version is installed, this one installs over it and keeps your settings.
+If you have 1.0, uninstall it first. It was signed with a different key, so Android will not install this one over it. From 1.1 on, a new version installs over the old one and keeps your settings.
 
 ## After you install
 

@@ -8,8 +8,8 @@
 #   KEYSTORE_PASSWORD  storePassword
 #   KEY_ALIAS          keyAlias
 #   KEY_PASSWORD       keyPassword
-# It must be the key 1.0 was signed with, or Android refuses to install the
-# new version over the old one.
+# Every release must be signed with the same key, or Android refuses to
+# install it over the one before. Losing the key means everyone uninstalls.
 name: Release
 
 on:

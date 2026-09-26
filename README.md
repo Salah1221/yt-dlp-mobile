@@ -65,7 +65,16 @@ It signs with the key from four repository secrets, set once under Settings, Sec
 | `KEY_ALIAS` | `keyAlias` |
 | `KEY_PASSWORD` | `keyPassword` |
 
-Use the key 1.0 was signed with. An APK signed with any other key will not install over the old version.
+Every release must be signed with the same key. An APK signed with any other key will not install over the old version, so keep the `.jks` file and its passwords somewhere safe.
+
+To make a key, once:
+
+```
+keytool -genkeypair -v -keystore release.jks -alias ytdlp-mobile \
+  -keyalg RSA -keysize 4096 -validity 10000 -storetype PKCS12
+```
+
+A PKCS12 store has one password, so `KEYSTORE_PASSWORD` and `KEY_PASSWORD` are the same.
 
 ## Tests
 
