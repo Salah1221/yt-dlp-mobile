@@ -148,3 +148,19 @@ The app mints no proof token. The log shows `Unable to fetch GVS PO Token
 for web client`, which makes a challenge more likely than it is for the
 server version, which runs a provider. It was not the cause of the 429, and
 it is the next thing to try if challenges keep coming from a clean address.
+
+## Android 17: job folders moved to internal storage
+
+On Android 17 the app lost its own `Android/data` folder. yt-dlp wrote
+every job there, through `getExternalFilesDir`, so every download failed
+before its first byte.
+
+Job folders now live in `noBackupFilesDir/jobs`. That is internal storage,
+a plain folder the app owns with no FUSE layer in between, and it is where
+the library already unpacks and runs Python, so a native process can
+plainly use it. It is on the same partition as `Android/data` on nearly
+every phone, so there is no less room. It is left out of backup, because a
+half download is worth nothing on another phone.
+
+The old `Android/data/.../files/jobs` folder cannot be resumed from the new
+place, so the startup sweep deletes it, as best effort.
